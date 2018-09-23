@@ -4,7 +4,7 @@ const express = require('express')
     , cors = require('cors');
 
 const extractIpParameter = () => 
-    process.argv[2] ? process.argv[2] : '192.168.0.17';
+    process.argv[2] ? process.argv[2] : 'shielded-beach-51714.herokuapp.com';
 
 const ip = extractIpParameter();
 app.set('ip', ip);    
@@ -15,5 +15,5 @@ app.use(bodyParser.json());
 
 require('./api')(app);
 
-app.listen(8080, () => 
-    console.log(`Servidor rodando em http://${ip}:8080`));
+app.listen(443, () => 
+    console.log(`Servidor rodando em https://${ip}`));
