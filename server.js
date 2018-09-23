@@ -3,11 +3,13 @@ const express = require('express')
     , bodyParser = require('body-parser')
     , cors = require('cors');
 
-const extractIpParameter = () => 
-    process.argv[2] ? process.argv[2] : 'shielded-beach-51714.herokuapp.com';
+    var ip = require("ip");
 
-const ip = extractIpParameter();
-app.set('ip', ip);    
+//const extractIpParameter = () => 
+//    process.argv[2] ? 'immense-retreat-73594.herokuapp.com' : 'immense-retreat-73594.herokuapp.com';
+
+//const ip = //extractIpParameter();
+app.set('ip', ip.address());    
 
 app.use(cors());
 app.use(express.static('public'));
@@ -15,5 +17,5 @@ app.use(bodyParser.json());
 
 require('./api')(app);
 
-app.listen(443, () => 
-    console.log(`Servidor rodando em https://${ip}`));
+app.listen(80, () => 
+    console.log(`Servidor rodando em http://${ip}`));
