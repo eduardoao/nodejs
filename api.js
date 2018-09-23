@@ -26,11 +26,11 @@ module.exports = app => {
 
     const usuario = {
         "id": 1,
-        "nome": "João da Silva",
-        "dataNascimento": "30/01/1990",
+        "nome": "Teste",
+        "dataNascimento": "30/01/1993",
         "telefone": "(21) 9988-7788",
-        "email": "joao@alura.com.br",
-        "senha": "alura123"
+        "email": "eoalcantara@gmail.com",
+        "senha": "123"
     };
 
     app.get('/api/carro/listaTodos', (req, res) =>
