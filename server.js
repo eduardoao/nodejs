@@ -3,13 +3,20 @@ const express = require('express')
     , bodyParser = require('body-parser')
     , cors = require('cors');
 
-    var ip = require("ip");
+    var ip = "";
+
+    var dns = require('dns');
+    var w3 = dns.lookup('www.w3schools.com', function (err, addresses, family) {
+    console.log(addresses);
+    ip = addresses;
+    });
+
 
 //const extractIpParameter = () => 
 //    process.argv[2] ? 'immense-retreat-73594.herokuapp.com' : 'immense-retreat-73594.herokuapp.com';
 
 //const ip = //extractIpParameter();
-app.set('ip', ip.address());    
+app.set('ip', ip);    
 
 app.use(cors());
 app.use(express.static('public'));
