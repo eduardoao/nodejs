@@ -6,7 +6,7 @@ const express = require('express')
     var ip = "";
 
     var dns = require('dns');
-    var w3 = dns.lookup('www.w3schools.com', function (err, addresses, family) {
+    var w3 = dns.lookup('https://testebackendionic.herokuapp.com/', function (err, addresses, family) {
     console.log(addresses);
     ip = addresses;
     });
@@ -24,5 +24,5 @@ app.use(bodyParser.json());
 
 require('./api')(app);
 
-app.listen(80, () => 
+app.listen(8080, () => 
     console.log(`Servidor rodando em http://${ip}`));
