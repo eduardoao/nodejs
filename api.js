@@ -2,7 +2,9 @@ const https = require('https');
 
 module.exports = app => {
 
-    const ip = app.get('ip');
+    var ip1 = require('ip');
+    const ip = ip1.address();
+    //const ip = app.get('ip');
     let counter = 0;
 
     const carros = [
