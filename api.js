@@ -69,7 +69,7 @@ module.exports = app => {
         const agendamentoId = agendamento.emailCliente + agendamento.data.substr(0, 10);
 
         const message = { 
-            app_id: "e53f5d24-40e4-458f-99db-5230cf3f8bc0",
+            app_id: "0d92fc10-9612-4e14-8377-f9706c3db467",
             headings: {"en": "Aluracar"},
             contents: {"en": "Agendamento confirmado!"},
             data: {"agendamento-id": agendamentoId},
