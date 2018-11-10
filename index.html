@@ -17,8 +17,39 @@
         <div class="jumbotron">
             <h1 class="display-4">Send Message</h1>
             <br>
-            <input type="text" class="class">
+            <input type="text" id="name" class="form-control" placeholder="Put your name">
+            <br>
+            <input type="text" id="message" class="form-control" placeholder="Put your message">
+            <br>
+            <button id="send" class='btn btn-success'>Send</button>
+        </div>
+    </div>
+
+    <br>
+    <div class="container">    
+        <div id="appendmessage" class="jumbotron">
+        <!--Here we append the message for chat users.-->
         </div>
     </div>
 </body>
+
+<script>
+    $(() => {
+        $("#send").click(() => {
+            var name =      $("#name").val();
+            var message =   $("#message").val();
+            if (name != "" && message != "")
+                addMessage({ name: $("#name").val() , message: $("#message").val() })             
+            else 
+                alert('Please put your name and your message!');
+        })
+    });
+
+   function addMessage(message) {
+        $("#appendmessage").append(`<h4> ${message.name} </h4> <br> <p>${message.message}</p> `)
+        console.log(message.message);
+    }
+
+</script>
+
 </html>
